@@ -65,13 +65,7 @@ template Selector(choices) {
     signal input in[choices];
     signal input index;
     signal output out;
-    
-    // Ensure that index < choices
-    component lessThan = LessThan(4);
-    lessThan.in[0] <== index;
-    lessThan.in[1] <== choices;
-    lessThan.out === 1;
-
+   
     component calcTotal = CalculateTotal(choices);
     component eqs[choices];
 
